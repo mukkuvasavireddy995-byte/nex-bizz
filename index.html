@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="ORBYNEX — Business Ecosystem">
+<title>ORBYNEX | Business Ecosystem</title>
+<style>
+:root{--c1:#1a1028;--c2:#b86cff;--c3:#ff8c42;--bg:#fff9ff;--ink:#172033;--muted:#6b778c;--line:#e7eaf0}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}
+nav{height:72px;padding:0 6%;display:flex;align-items:center;justify-content:space-between;background:var(--c1);color:#fff}
+.logo{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:900;letter-spacing:.5px}
+.mark{width:39px;height:39px;border-radius:12px;display:grid;place-items:center;background:linear-gradient(135deg,var(--c2),var(--c3));color:#fff}
+.links{display:flex;gap:24px;font-size:13px;color:#d8e1ed}.links a{cursor:pointer}
+.btn{border:0;border-radius:11px;padding:12px 17px;font-weight:800;cursor:pointer}
+.navbtn{background:#fff;color:var(--c1)}.hero{padding:75px 7%;background:linear-gradient(135deg,var(--c1),#15294a);color:#fff;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:360px;height:360px;border:65px solid #ffffff10;border-radius:50%;right:-120px;top:-170px}
+.hero h1{font-size:clamp(34px,6vw,64px);line-height:1.02;max-width:760px;margin:0 0 18px}
+.hero p{font-size:18px;line-height:1.65;color:#c7d3e4;max-width:650px;margin-bottom:27px}
+.primary{background:linear-gradient(90deg,var(--c2),var(--c3));color:#fff}.ghost{background:#ffffff12;color:#fff;border:1px solid #ffffff30;margin-left:7px}
+.wrap{max-width:1180px;margin:auto;padding:42px 6%}.eyebrow{color:var(--c2);font-weight:900;letter-spacing:1.5px;text-transform:uppercase;font-size:12px}
+h2{font-size:29px;margin:8px 0}.sub{color:var(--muted);line-height:1.6}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px;margin-top:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:19px;padding:22px;box-shadow:0 8px 28px #12213a0a}
+.card .ico{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:color-mix(in srgb,var(--c2) 13%,white);color:var(--c1);font-weight:900;font-size:20px}
+.card h3{margin:15px 0 7px}.card p{color:var(--muted);font-size:13px;line-height:1.55}
+.pill{display:inline-block;padding:6px 9px;border-radius:20px;background:#f0f3f7;font-size:11px;margin:2px}
+.actions{display:flex;gap:8px;margin-top:15px}.actions .btn{flex:1;padding:9px}
+.cta{margin-top:42px;border-radius:22px;padding:30px;background:linear-gradient(120deg,var(--c1),#1b3359);color:#fff;display:flex;justify-content:space-between;gap:20px;align-items:center}
+footer{padding:25px 6%;background:var(--c1);color:#aebdd0;font-size:12px}
+.toast{position:fixed;right:20px;bottom:20px;background:#071329;color:#fff;padding:13px 17px;border-radius:11px;display:none;z-index:5}
+@media(max-width:800px){.links{display:none}.grid{grid-template-columns:1fr}.cta{display:block}.cta .btn{margin-top:15px}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo"><span class="mark">◉</span>ORBYNEX</div>
+  <div class="links"><a onclick="jump('discover')">Discover</a><a onclick="jump('market')">Marketplace</a><a onclick="jump('rfq')">Post RFQ</a><a onclick="jump('about')">How it works</a></div>
+  <button class="btn navbtn" onclick="toast('Welcome to ORBYNEX!')">Join Free</button>
+</nav>
+
+<section class="hero">
+  <div class="eyebrow">Business Ecosystem</div>
+  <h1>Your business. A bigger orbit.</h1>
+  <p>Bring suppliers, buyers, services and opportunities into one connected ecosystem.</p>
+  <button class="btn primary" onclick="jump('discover')">Explore Businesses →</button>
+  <button class="btn ghost" onclick="jump('rfq')">Post Your Requirement</button>
+</section>
+
+<main class="wrap">
+<section id="discover">
+  <div class="eyebrow">DISCOVER</div><h2>Find businesses worth knowing.</h2>
+  <p class="sub">Search across manufacturers, suppliers, distributors and service providers.</p>
+  <div class="grid">
+    <article class="card"><div class="ico">SV</div><h3>SV Packaging</h3><p>Eco-friendly packaging for food, retail and growing brands.</p><span class="pill">Manufacturer</span><span class="pill">Wholesale</span><div class="actions"><button class="btn primary" onclick="connect('SV Packaging')">Connect</button><button class="btn" onclick="toast('Profile opened')">View</button></div></article>
+    <article class="card"><div class="ico">GT</div><h3>GreenTech Parts</h3><p>Solar and electrical components with bulk-order support.</p><span class="pill">Supplier</span><span class="pill">Solar</span><div class="actions"><button class="btn primary" onclick="connect('GreenTech Parts')">Connect</button><button class="btn" onclick="toast('Catalogue opened')">View</button></div></article>
+    <article class="card"><div class="ico">DP</div><h3>DigitalPro Services</h3><p>Web, branding and automation services for SMEs.</p><span class="pill">Technology</span><span class="pill">Services</span><div class="actions"><button class="btn primary" onclick="connect('DigitalPro Services')">Connect</button><button class="btn" onclick="toast('Profile opened')">View</button></div></article>
+  </div>
+</section>
+
+<section id="market" style="margin-top:48px">
+  <div class="eyebrow">MARKETPLACE</div><h2>Products & services for business.</h2>
+  <div class="grid">
+    <article class="card"><div class="ico">📦</div><h3>Eco Packaging Box</h3><p>SV Packaging · MOQ 500 units</p><b>₹18 / unit</b><div class="actions"><button class="btn primary" onclick="enquiry('Eco Packaging Box')">Send Enquiry</button></div></article>
+    <article class="card"><div class="ico">☀</div><h3>Solar Panel 550W</h3><p>GreenTech Parts · MOQ 20 units</p><b>₹21,500 / unit</b><div class="actions"><button class="btn primary" onclick="enquiry('Solar Panel 550W')">Send Enquiry</button></div></article>
+    <article class="card"><div class="ico">⚙</div><h3>Business Automation</h3><p>DigitalPro · Custom project</p><b>Request quotation</b><div class="actions"><button class="btn primary" onclick="enquiry('Business Automation')">Request Quote</button></div></article>
+  </div>
+</section>
+
+<section id="rfq" class="cta">
+  <div><div class="eyebrow" style="color:var(--c2)">RFQ ENGINE</div><h2 style="margin:7px 0;color:#fff">Can't find what you need?</h2><p style="color:#c7d3e4;margin:0">Post one requirement and let matching businesses come to you.</p></div>
+  <button class="btn primary" onclick="postRFQ()">Publish RFQ →</button>
+</section>
+
+<section id="about" style="margin-top:48px">
+  <div class="eyebrow">HOW IT WORKS</div><h2>From need to partnership.</h2>
+  <div class="grid">
+    <article class="card"><div class="ico">1</div><h3>Discover</h3><p>Find relevant businesses using categories, products and locations.</p></article>
+    <article class="card"><div class="ico">2</div><h3>Connect</h3><p>Send a business connection or product enquiry.</p></article>
+    <article class="card"><div class="ico">3</div><h3>Grow</h3><p>Discuss, quote, collaborate and create long-term value.</p></article>
+  </div>
+</section>
+</main>
+<footer>© 2026 ORBYNEX · A front-end B2B application prototype · Built for GitHub Pages</footer>
+<div id="toast" class="toast"></div>
+<script>
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.style.display='block';clearTimeout(window.x);window.x=setTimeout(()=>t.style.display='none',2200)}
+function jump(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function connect(name){toast('Connection request sent to '+name)}
+function enquiry(name){toast('Enquiry sent for '+name)}
+function postRFQ(){const title=prompt('What does your business need?');if(title)toast('RFQ "'+title+'" published for matching businesses')}
+</script>
+</body>
+</html>
